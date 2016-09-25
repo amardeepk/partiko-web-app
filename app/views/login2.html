@@ -1,0 +1,50 @@
+<div>
+	<div id="loginbox">                    
+        <div class="panel panel-info" >
+            <div class="panel panel-info" >
+                <!-- <a style="color:grey;" ng-click="closeThisDialog(); vm.openDialogBox()">
+                <div style="position:absolute;top:32px;left:35px; border-radius:50%; background:transparent !important; border:1px solid grey !important;" id="btn-signup"  class="btn btn-success">
+                &lt</div></a> -->
+                <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Log In with Email</h4>
+                <h5 class="text-center" style="color:#666666">Good to have you back!</h5><br>
+
+                <div style="padding-top:30px" class="panel-body">
+
+                    <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+
+                    <form id="loginform" ng-submit="vm.submitSignInForm()" class="form-horizontal" role="form">
+                                
+                        <!-- <div class="col-sm-1" style="height:50px;margin-top: 20px;margin-bottom: 20px;margin-right: 35px;margin-left: 35px;" class="input-group"> -->
+                            <input style="height:50px;" id="login-username" type="email" ng-model="vm.loginData.email" class="form-control" name="username" value="" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>                                        
+                                <!-- </div> -->
+                            <div ng-messages="loginform.email.$error" role="alert" multiple>
+                                <div ng-message="required">
+                                    <span>Email field is required</span>
+                                </div>
+                                <div ng-message="pattern">
+                                    <span>Email must be a valid e-mail address</span>
+                                </div>
+                            </div>
+                        <br> 
+                        <!-- <div style="width:440px;height:50px;margin-top: 20px;margin-bottom: 20px;margin-right: 35px;margin-left: 35px;" class="input-group"> -->
+                            <input style="height:50px;" id="login-password" type="password" ng-model="vm.loginData.password" class="form-control" name="password" placeholder="Password" required>
+
+                            <div ng-messages="loginform.password.$error" role="alert">
+                                <div ng-message="required"><span>Password field is required</span></div>
+                            </div>
+                                
+                        <h5 class="text-center">Forgotten your password? <a style="color:black" ng-click="closeThisDialog();vm.resetPassword()">RESET IT NOW</a></h5>
+                        <br>
+                        
+                        <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">
+                            <button style="width:45%; height:50px" id="btn-login" class="btn btn-success"
+                            ng-disabled="loginform.$invalid || loginform.$pristine" >LOG IN</button>
+                        </div>
+                    </form>
+                </div>                     
+            </div>  
+        </div>
+        
+    </div>
+    
+</div>

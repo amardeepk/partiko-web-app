@@ -1,0 +1,136 @@
+<div>
+
+	<div class="searchWrap7">
+        <h1 class="myHeading" translate="dashborad.header.title"></h1>
+		<h4 class="myTitle" translate="dashborad.header.text"></h4>
+        <div class="col-md-6 col-md-offset-3 text-center">
+                            <a target="_blank" href="https://play.google.com/store/apps/details?id=com.events.partiko"><img style="padding:15px; height:90px;"src="../images/google.png"></a>
+                            <a target="_blank" ng-click="openDialogBox4()"><img style="padding:15px; height:90px;"src="../images/apple.png"></a>
+                        </div>
+                        <div class="cl"></div>
+    </div>
+
+	<div class="container myPad">
+        <div class="row" style="width:100%;">
+			<div class="col-md-12">
+				<div class="text-center">
+					<h1 class="noMargin" translate="dashboard.title"></h1>
+				</div>
+				
+			</div>
+		</div>
+    </div>
+
+    <div>
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<!-- <div ng-repeat="event in vm.events" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+			<a ui-sref='event_detail({ event_id: "{{event.event_id}}" })'>
+				<div class="categoryWrap" style="position:relative;">
+                    <img ng-src="{{event.img_url}}" onError="this.src='images/brand.jpg';"class="catImage" style="background-color:#536878;">
+					<a ui-sref='events({ category: event.category.toLowerCase() })' class="catLink" style="background-color: {{event.eventcategory.color}} !important;"><span>{{event.category}}</span> </a>
+					<div class="catContent">
+						<h3 class="titleHeading">{{event.event_name}}</h3>
+						<label class="dateHeading"><span class="glyphicon glyphicon-calendar"></span>&nbsp&nbsp<span>{{event.start_date | date}}</span></label><br/>
+						<label class="dateHeading"><span class="glyphicon glyphicon-map-marker"></span>&nbsp&nbsp<span>{{event.location.split(',')[0]}},{{event.location.split(',').reverse()[1]}},{{event.location.split(',').reverse()[0]}}</span> </label>
+					</div>
+					<div class="col-xs-8">
+						 <label ng-if="event.user_id!=0&&event.min_price==0" class="dateHeading lineHeight34"><span>&nbsp</span></label>
+                    <label ng-if="event.user_id!=0&&event.min_price!=0" class="dateHeading lineHeight34"><span>Price: &#8377;{{event.min_price}}</span></label>
+                    <label ng-if="event.user_id==0" class="dateHeading lineHeight34"><span>&nbsp</span></label>
+					</div>
+                <div class="gettickets text-right" style="padding:0 20px;">
+						<a ui-sref='event_detail({ event_id: "{{event.event_id}}" })' class="btn btn-info btnBg"><span>Book Now</span> </a>
+
+					</div>
+					<div class="cl"></div>
+					<br/>
+                </div>
+			</a>
+		</div> -->
+		<div ng-repeat="event in vm.events" class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+            <a ui-sref='event_detail({ event_id: "{{slugify(event.event_name,event.event_id)}}",category: "{{event.category}}" })'>
+                <div class="categoryWrap" style="position:relative;">
+                    <div class="buynowhover"style="position:relative;">
+                        <div class="overlay">
+            <a ui-sref='event_detail({ event_id: "{{slugify(event.event_name,event.event_id)}}",category: "{{event.category.toLowerCase()}}" })'class="buynow">Buy Tickets</a>
+        </div>
+                    <img ng-src="{{event.img_url}}" onError="this.src='images/brand.jpg';"class="catImage" style="background-color:#536878;">
+                </div>
+                    <a ui-sref='events({ category: event.category.toLowerCase() })' class="catLink" style="background-color: {{event.eventcategory.color}} !important;"><span>{{event.category}}</span> </a>
+                    <div class="catContent">
+                        <h3 class="titleHeading" style="display:flex;justify-content:space-between;"><span style="    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;">{{event.event_name}}</span> <span ng-if="event.user_id!=0"style="width:90px;text-align:right;flex-shrink:0;">&#8377;{{event.min_price}}</span></h3>
+                        <h5 style="display:flex;justify-content:space-between;">
+                        <label class="dateHeading" style="    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;"><span>{{event.location.split(',')[0]}},{{event.location.split(',').reverse()[1]}},{{event.location.split(',').reverse()[0]}}</span> </label>
+                         <label ng-if="event.user_id!=0&&event.min_price!=0" class="dateHeading lineHeight34" style="line-height:16px;width:90px;text-align:right;flex-shrink:0;"><i class="fa fa-calendar"></i><span>&nbsp&nbsp{{event.start_date | date : 'MMM dd'}}</span></label>
+                        </h5>
+                    </div>
+                    
+                
+                    
+                </div>
+            </a>
+        </div>
+		
+		<div class="cl"></div>
+		<br/><br/>
+		<div class="col-md-12">
+			<div class="text-center ">
+				<a ui-sref="events" style='background-color:#f8f8f8; font-size:20px; border:1px solid #EBEBEB; color:#929292; width:200px;'class='showmore btn btn-info' role='button'><span style="line-height:44px">View All</span> </a>
+			</div>
+        </div>
+		<div class="cl"></div>
+
+	</div>
+	</div>
+
+	<div class="cl"></div>
+	<br/><br/>
+	<hr class="hrLine" />
+	<br/>
+
+	<div class="container">
+        <div class="row" style="width:100%;">
+			<div class="col-md-12">
+				<div class="text-center heading-dash">
+					<h1 translate="OUR CATEGORIES"> </h1>
+				</div>
+			</div>
+			<div class="cl"></div>
+		</div>
+	</div>
+
+	<br/><br/>
+
+	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+	<div ng-repeat="category in vm.categories" style="height:220px; padding:15px; "class="col-md-4">
+		<a ui-sref='events({ category: category.name.toLowerCase() })'>
+		 	<div class="cat"style="background-color:{{category.color}};height:190px;border-radius:6px; ">
+  
+    <div style="height:100%; width:100%;padding:10px;">
+
+    <div style="height:100%; width:100%;display: flex;
+    align-items: center;
+    justify-content: center;
+    border:0;
+    flex-direction:column;
+
+    ">   
+         <img style="height:65px;" ng-src="{{category.icon}}">
+    	<h3 style="color:white;">{{category.name}}</h3>
+    </div>
+    	
+    </div>
+ 	</div>
+      
+	</a>
+		</div>
+       
+
+	</div>
+	<div class="cl"></div>
+	<br/><br/>
+</div>

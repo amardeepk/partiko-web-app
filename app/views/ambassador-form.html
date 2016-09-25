@@ -1,0 +1,121 @@
+<div class="container">
+<form style="padding:60px 20%;"class="form-horizontal" ng-submit="vm.submitForm()" role="form">
+     <div class="form-group">
+        <label for="name" class="col-sm-3 control-label"><strong style="font-size:20px;"> YOUR DETAILS</strong></label>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.firstname" id="name" name="name" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.lastname" id="name" name="name" placeholder="Last Name">
+        </div>
+    </div>
+    
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="email" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control" ng-model="vm.data.email" id="email" name="email" placeholder="example@domain.com">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="phonenumber" class="col-sm-3 control-label">Phone Number</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.phone_number" id="phonenumber" name="phonenumber" placeholder="Phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="college" class="col-sm-3 control-label">College</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.college" id="college" name="college" placeholder="College">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="city" class="col-sm-3  control-label">City</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.city" id="city" name="city" placeholder="City">
+        </div>
+    </div>
+   <!--  <div class="form-group">
+        <label style="font-size:18px;"for="city" class="col-sm-3  control-label">Facebook Profile Url</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.facebook_url" id="city" name="city" placeholder="Facebook Profile">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="city" class="col-sm-3  control-label">Twitter Profile Url</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.twitter_url" id="city" name="city" placeholder="Twitter Profile">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="city" class="col-sm-3  control-label">LinkedIn Profile Url</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" ng-model="vm.data.linkedin_url" id="city" name="city" placeholder="LinkedIn Profile">
+        </div>
+    </div> -->
+    <br>
+    <div style="display:flex; align-items:center; flex-wrap:wrap;"class="form-group">
+        <label style="font-size:18px;"for="photo" class="col-sm-3 col-sx-3 control-label">Photo</label>
+        <div style="padding:0 20px;"class="col-lg-4 col-md-5 col-sm-6 col-sx-4">
+            <img style="width:100%;background-color:white; margin:0 -4px; border-radius:5px; padding:15px;border:2px solid #DCDEE3;"src="../images/image-upload.png">
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-3 col-sx-3" style="text-align:center; padding-top:20px;">
+            <div class="input-group image-preview">
+                <input style="background-color:white;padding:0;border-right:0; display:none;"type="text" class="form-control image-preview-filename" disabled="disabled"> <!-- don't give a name === doesn't send on POST/GET -->
+                <span class="input-group-btn">
+                    <!-- image-preview-clear button -->
+                    <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+                        <span class="glyphicon glyphicon-remove"></span> Clear
+                    </button>
+                    <!-- image-preview-input -->
+                    <div style="height:50px"class="btn btn-default image-preview-input">
+                        <span ng-if="!vm.file.$ngfName" style="line-height:30px"class="glyphicon glyphicon-folder-open"></span>
+                        <span ng-if="!vm.file.$ngfName" style="line-height:30px"class="image-preview-input-title">Browse</span>
+                        <span ng-if="vm.file">{{vm.file.$ngfName}}</span>
+                        <input type="file" ngf-select ng-model="vm.file" name="file" accept="image/*" ngf-max-size="10MB" ngf-resize="{width: 100, height: 100}">
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <br>
+    
+        <div>
+     <div class="text-center"id="nextbutton" >
+                         <div style="width:160px; height:50px; background-color:#ed5e44 !important; border-radius:4px;"id="btn-fblogin "  class="btn btn-success">    <a ><div style="padding-top:10px; font-size:13px;">NEXT</div></a>    </div></div>
+   <div id="nextform">
+     <div style="padding-top:30px; text-align:center;" class="panel-body" >
+                        <div class="text-center">
+                         <div style="width:260px; height:50px; background-color:#006DBF !important; border-radius:4px;"id="btn-fblogin "  class="btn btn-success">    <a href="#"><div style="padding-top:10px; font-size:13px;"><img style="height:14px;"src="images/facebook-team.png"> CONNECT WITH FACEBOOK</div></a>    </div></div>
+                         <br>
+                         
+                         <div class="text-center">
+                         <div style="width:260px; height:50px; background-color:#00ADF3 !important; border-radius:4px;"id="btn-signup"  class="btn btn-success">    <a href="#/signup"><div style="padding-top:10px; font-size:13px;"><img style="height:14px;"src="images/twitter-team.png"> CONNECT WITH TWITTER</div></a>    </div></div> 
+                         <br>
+                         <div class="text-center">
+                         <div style="width:260px;; height:50px; background-color:#FF5C3B !important; border-radius:4px;"id="btn-glogin"  class="btn btn-success">    <a href="#"><div style="padding-top:10px; font-size:13px;"><img style="height:14px;"src="images/google-icon.png"> CONNECT WITH GMAIL</div></a>    </div></div> 
+                         <br>
+                         <span> # This step is necessary for you to be approved by our team. Without proper integration from the above three (Facebook is mandatory) your application will not be considered.</span>
+                       
+
+                        </div>      
+
+
+
+    <div class="form-group">
+        <div class="col-sm-4 col-sm-offset-4">
+            <input style="width:100%; height:50px; font-size:18px" id="submit" type="submit" value="Submit" class="btn btn-primary">
+        </div>
+    </div>
+</div>
+</div>
+</form>
+</div>

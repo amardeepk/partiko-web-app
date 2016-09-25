@@ -1,0 +1,436 @@
+
+<div class="hidden-xs col-sm-12 xol-md-12 col-lg-12 padding0" style="padding-top:50px;">
+    <div class="searchWrap5 container" ng-style="{'background':'linear-gradient(rgba(0, 0, 0, 0.1),rgba(0, 0, 0, 0.1)), url(' + vm.event.img_url + ')'}" onError="this.src='images/brand.jpg';" >
+      <a style="margin:0 8%; border-radius:3px; padding:4px;background-color: {{vm.event.eventcategory.color}} !important;" ui-sref='events({ category: vm.event.category.toLowerCase() })'>
+        <span>&nbsp&nbsp {{vm.event.category}}&nbsp&nbsp</span></a>
+        <h1 style="padding:0 8%;    margin-bottom: 30px;"class="myHeading1 bottom-align-text" >{{vm.event.event_name}}</h1>
+
+    </div>
+</div>
+<div class="col-xs-12 hidden-sm hidden-md hidden-lg padding0" style="padding-top:50px;">
+    <img ng-src="{{vm.event.img_url}}" style="width:100%;" class="imgXs">
+    
+    <h1 class="myHeading2 container">{{vm.event.event_name}}</h1>
+</div>
+<div class="cl"></div>
+<ul class="nav nav-tabs" role="tablist" style="background-color:white;padding:0% 9%;">
+  <li role="presentation" class="active"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#book" aria-controls="book" role="tab" data-toggle="tab">Buy Tickets</a></li>
+                                        <li role="presentation"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#details" aria-controls="details" role="tab" data-toggle="tab">Details</a></li>
+                                        <li role="presentation"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#venue" aria-controls="venue" role="tab" data-toggle="tab" ng-click="mymap()">Venue</a></li>
+    <li role="presentation"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#leaderboard" aria-controls="venue" role="tab" data-toggle="tab" >Leaderboard</a></li>
+    <li role="presentation"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#terms" aria-controls="venue" role="tab" data-toggle="tab">Terms</a></li>
+    <li role="presentation"><a style="color:grey;    height: 50px;
+    font-size: 16px;"href="#prizes" aria-controls="venue" role="tab" data-toggle="tab">Prizes</a></li>
+                                        
+                                       
+                                    </ul>
+
+<div class="tab-content">
+<div role="tabpanel" id="details"class="tab-pane  col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 padding0" style="    padding: 30px;">
+
+    <div style="padding:0 0; "class="col-xs-12 col-sm-4 col-sm-push-8 col-md-4 col-lg-4">
+         
+         <a style="font-weight: 300;margin-left:-7.6%;"ng-if="vm.event.user_id!=0&&vm.event.tickets.length!=0"ng-click="nexttab()"  class="btn btn-info ticketBtn smallticket nexttab">Get Tickets</a>
+        <a style="font-weight: 300;margin-left:-7.6%;"ng-if="vm.event.user_id==0" class="btn btn-info ticketBtn smallticket">Call to : {{vm.event.contact_number}}</a>
+        <a style="font-weight: 300;margin-left:-7.6%;"ng-if="vm.event.user_id!=0&&vm.event.tickets.length==0" class="btn btn-info ticketBtn smallticket">No tickets available</a>
+        <div id="ticket" class="getTicketsWrap" style="padding:0;background-color:transparent;display:block;">
+          <div style="background-color:white;margin-bottom:10px;">
+            <div style=" padding:20px;   box-shadow: 0 4px 6px rgba(0,0,0,.1),0 0 2px rgba(0,0,0,.1);border-radius:4px;">
+              <h3 style="  padding: 0; margin: 0;margin-bottom: 15px;text-overflow: ellipsis;width:90%;overflow: hidden;"class="myHeading2 container">{{vm.event.event_name}}</h3>
+            <label class="dateHeading1" style="color:#ED5E44;"><i class="fa fa-calendar"></i> &nbsp&nbsp {{vm.event.start_time | date:'medium'}}</label><br/>
+            <label class="dateHeading1 margin0"><span class="glyphicon glyphicon-map-marker"></span> &nbsp&nbsp{{vm.event.location}}</label>
+          </div>
+            </div>
+
+            <a ng-if="vm.event.user_id!=0&&vm.event.tickets.length!=0"  class="btn btn-info ticketBtn" ng-click="nexttab()"style="    box-shadow: 0 4px 6px rgba(0,0,0,.1),0 0 2px rgba(0,0,0,.1);border-radius:2px;margin-bottom:15px;font-weight:300;">Get Tickets</a>
+            <a ng-if="vm.event.user_id==0" class="btn btn-info ticketBtn" style="    box-shadow: 0 4px 6px rgba(0,0,0,.1),0 0 2px rgba(0,0,0,.1);border-radius:2px;margin-bottom:15px;font-weight:300;">Call to : {{vm.event.contact_number}}</a>
+            <a ng-if="vm.event.user_id!=0&&vm.event.tickets.length==0" class="btn btn-info ticketBtn"style="    box-shadow: 0 4px 6px rgba(0,0,0,.1),0 0 2px rgba(0,0,0,.1);border-radius:2px;margin-bottom:15px;font-weight:300;">No tickets available</a>
+            <div   style="display: flex;justify-content:space-around;background-color:white;">
+
+              <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]={{vm.url}}" style=" width: 33.33%;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    border-right: 1px solid #e3e6e8;"><span style="color:#3B5998;" class="fa fa-facebook-official"> </span></a>
+              <span style="color:#C13C31;width: 33.33%;height: 60px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    border-right: 1px solid #e3e6e8;" class="fa fa-google-plus-square"></span>
+              <span style="color:#1DA1F2;    width: 33.33%;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 60px;
+    " class="fa fa-twitter-square"></span>
+            </div>
+        </div>
+       
+
+    </div>
+    <div class="col-xs-12 col-sm-8 col-sm-pull-4 col-md-8 col-lg-8" >
+        <label class="dateHeading1"  style="color:#ED5E44;font-weight:bolder;"><i class="fa fa-calendar"></i> &nbsp&nbsp{{vm.event.start_time | date:'medium'}}</label><br/>
+            <label class="dateHeading1 margin0" style="font-weight:bolder;"><span class="glyphicon glyphicon-map-marker"></span> &nbsp&nbsp{{vm.event.location}}</label>
+
+
+            <br>
+            <br><br>
+                    <p class="detailText" style="font-weight:400;color:#6E6E6E;" ng-bind-html="renderHtml(vm.event.event_description)"></p>
+                   
+
+
+
+    </div>
+    <div class="cl"></div>
+
+</div>
+<div role="tabpanel" id="venue"class="tab-pane">
+<div id="location"class="maps">
+    <a target="_blank" ng-href="{{vm.map.link}}">
+      <ui-gmap-google-map center="vm.map.center" zoom="vm.map.zoom" style="pointer-events:none;">
+        <ui-gmap-marker coords="vm.map.marker" idkey="vm.map.id"></ui-gmap-marker>
+      </ui-gmap-google-map>
+    </a>
+  </div>
+
+</div>
+<div role="tabpanel" id="prizes"class="tab-pane">
+  <div class="container">
+    <div class="col-md-12" style="padding:20px;">
+<div class="col-md-3">
+<img src="images/karan.jpg"></div>
+
+<div class="col-md-9">
+ <div class="header">
+                <h1>Lorem Ipsum</h1>
+                <h4>Web Developer</h4>
+                <span>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</span>
+           </div>
+</div>
+</div>
+  <div class="col-md-12" style="padding:20px;">
+<div class="col-md-3">
+<img src="images/karan.jpg"></div>
+
+<div class="col-md-9">
+ <div class="header">
+                <h1>Lorem Ipsum</h1>
+                <h4>Web Developer</h4>
+                <span>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</span>
+           </div>
+</div>
+</div>
+  <div class="col-md-12" style="padding:20px;">
+<div class="col-md-3">
+<img src="images/karan.jpg"></div>
+
+<div class="col-md-9">
+ <div class="header">
+                <h1>Lorem Ipsum</h1>
+                <h4>Web Developer</h4>
+                <span>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..."
+"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain..."</span>
+           </div>
+</div>
+</div>
+</div>
+</div>
+
+<div role="tabpanel" id="terms"class="tab-pane">
+<div class="container">
+  <div class="row">
+
+    <section class="content">
+     
+      <div class="col-md-8 col-md-offset-2">
+         <p>
+              The following sets out the terms and condition for use of the Partiko website,
+              application and our services.
+          </p>
+
+         
+
+          <h3 style="padding-top:50px;border-bottom:2px solid green;" id="introduction">1. Introduction</h3>
+          
+
+          <p>
+              1.1 These are the terms of use, including the terms and conditions of supply (<b>Terms</b>),
+              for www.Partiko.com and the Partiko application. For the purposes of these Terms,
+              both the website and application shall be referred to as the "<b>App</b><span>"</span>. The App is operated
+              by Partiko Services Private Ltd trading as Partiko (<b>we</b>, <b>us </b>and <b>our</b>). We are a Private limited
+              company, registered in New Delhi, India.
+          </p>
+
+         
+          <p>
+              1.2 Your use of the App and your Purchase of any of the Bookings/Tickets offered via our App is subject
+              to these Terms and by placing an order for any Bookings/Tickets you agree to be bound by them.
+              You should print a copy of these Terms for future reference. Use of your personal information
+              submitted via this App is governed by our privacy policy.
+          </p>
+
+      </div>
+    </section>
+    
+  </div>
+</div>
+</div>
+<div role="tabpanel" id="leaderboard"class="tab-pane">
+<div class="container">
+  <div class="row">
+
+    <section class="content">
+     
+      <div class="col-md-8 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="pull-right">
+             <!--  <div class="btn-group">
+                <button type="button" class="btn btn-success btn-filter" data-target="pagado">Today</button>
+                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Weekly</button>
+                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Monthly</button>
+              </div> -->
+            </div>
+            <div class="table-container">
+              <table class="table table-filter" style="table-layout:fixed;">
+                <tbody>
+                   <tr data-status="pagado">
+                    
+                    <td>
+                    <h3 class="title">
+                            Rank
+                          </h3>
+                    </td>
+                    <td>
+                                     
+                          <h3 class="title">
+                            Name
+                          </h3>
+                        
+                     
+                    </td>
+                     <td>
+                                          
+                          <h3 class="title">
+                            Tickets Referred
+                          </h3>
+                        
+                     
+                    </td>
+                  </tr>
+                  <tr data-status="pagado">
+                    
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <i class="glyphicon glyphicon-star" style="color:gold;"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media" style="display: flex;align-items: center;">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        
+                          <h4 class="title">
+                            Lorem Impsum
+                          </h4>
+                        
+                      </div>
+                    </td>
+                     <td>
+                          <h4 class="title">
+                            86
+                          </h4>
+                        
+                    
+                    </td>
+                  </tr>
+                  <tr data-status="pagado">
+                    
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <i class="glyphicon glyphicon-star" style="color:silver;"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media" style="display: flex;align-items: center;">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        
+                          <h4 class="title">
+                            Lorem Impsum
+                          </h4>
+                        
+                      </div>
+                    </td>
+                     <td>
+                          <h4 class="title">
+                            86
+                          </h4>
+                        
+                    
+                    </td>
+                  </tr>
+                  <tr data-status="pagado">
+                    
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <i class="glyphicon glyphicon-star" style="color:coral;"></i>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media" style="display: flex;align-items: center;">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        
+                          <h4 class="title">
+                            Lorem Impsum
+                          </h4>
+                        
+                      </div>
+                    </td>
+                     <td>
+                          <h4 class="title">
+                            86
+                          </h4>
+                        
+                    
+                    </td>
+                  </tr>
+                  <tr data-status="pagado">
+                    
+                    <td>
+                      <a href="javascript:;" class="star">
+                        <h4>4</h4>
+                      </a>
+                    </td>
+                    <td>
+                      <div class="media" style="display: flex;align-items: center;">
+                        <a href="#" class="pull-left">
+                          <img src="https://s3.amazonaws.com/uifaces/faces/twitter/fffabs/128.jpg" class="media-photo">
+                        </a>
+                        
+                          <h4 class="title">
+                            Lorem Impsum
+                          </h4>
+                        
+                      </div>
+                    </td>
+                     <td>
+                          <h4 class="title">
+                            86
+                          </h4>
+                        
+                    
+                    </td>
+                  </tr>
+                  
+                  
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="content-footer">
+          
+        </div>
+      </div>
+    </section>
+    
+  </div>
+</div>
+
+</div>
+<div role="tabpanel" id="book"class="tab-pane active">
+<div ng-if="vm.event.user_id!=0&&vm.event.tickets.length!=0"id="ticketing" class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1" style="     padding-top: 20px;">
+    <div  class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+        <h3>Choose your Tickets</h3>
+        <br><br>
+    </div>
+    <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <h3 class="colorRed">{{vm.event.start_time | date:'medium'}} </h3>
+<br><br>
+    </div>
+
+    <div class="cl"></div>
+</div>    
+<div ng-if="vm.event.user_id!=0&&vm.event.tickets.length!=0"style="background-color:white;width:100%;display:block;z-index:1000;" class="col-md-12">
+    <br><br>
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
+
+        <div class="ticketCountWrap" ng-repeat="ticket in vm.tickets">
+            <div class="flLeft">
+                <h3 class="colorRed noMargin"></h3>
+                <br/>
+                
+            </div>
+            <ul>
+                <li style="display:flex;justify-content:space-between;flex-wrap:wrap;">
+ <div style="max-width:600px;"><h4>{{ticket.title}} ( {{ticket.ticket_description}} ) </h4><h5><b style="color:#ED5E44;">₹ {{ticket.price}}</b></h5></div>
+ 
+            <div>
+               
+                <div ng-if="ticket.tickets_total>ticket.tickets_sold&&ticket.sale_start_time<vm.curtime&&ticket.sale_end_time>vm.curtime" class="input-group ticketInputG">
+                  <span class="input-group-btn">
+                      <button style="border-radius:50%;width:34px;height:34px;padding: 4px 7px 7px 7px;" type="button" ng-click="decreaseItemCount(ticket)" class="btn btn-danger btn-number newPad"  data-type="minus" data-field="quant[2]">
+                        <img style="height:16px;"src="images/minus-icon-ticket.png">
+
+                  </button>
+
+                </span>
+                <div style="display:flex; flex-direction:column; padding:0 15px;">
+                <h5 style="margin:3px">Tickets</h5>
+                <h5 style="margin:3px">{{ticket.qty}}</h5>
+
+                </div>
+
+                <span class="input-group-btn">
+                  <button style="border-radius:50%;width:34px;height:34px;padding: 4px 7px 7px 7px;" type="button" ng-click="increaseItemCount(ticket)"
+                  class="btn btn-danger btn-number newPad" data-type="plus" data-field="quant[2]">
+                     <img style="height:16px;"src="images/plus-icon-ticket.png">
+                  </button>
+              </span>
+              </div>
+              
+              <div ng-if="ticket.tickets_total<=ticket.tickets_sold" class="input-group ticketInputG">
+                <span style="display:flex; flex-direction:column; padding:17px 15px;">SOLD OUT</span>
+
+              </div>
+              <div ng-if="ticket.sale_start_time>vm.curtime" class="input-group ticketInputG">
+                <span style="display:flex; flex-direction:column; padding:17px 15px;">COMING SOON</span>
+              </div>
+              <div ng-if="ticket.sale_end_time<vm.curtime" class="input-group ticketInputG">
+                <span style="display:flex; flex-direction:column; padding:17px 15px;">NOT AVAILABLE</span>
+              </div>
+          </div>
+    </li>
+  <br>
+  </ul>
+      <div class="cl"></div>
+  </div>
+  <br/>
+  <div  style="display:flex; align-items:center; justify-content:flex-end; margin-bottom: 15px;">
+    <h3 style="margin:0 10px;">Total : ₹{{vm.total}}</h3>
+    <a id="button-checkout"style="border-radius:2px;background-color:#ED5E44;width:250px; font-size:17px;margin:0 20px;" ng-click='purchase()' class="btn btn-info ticketBtn btnWidth">Checkout  <span class="frRight glyphicon glyphicon-chevron-right" style="padding-right:10px;"></span></a>
+</div>
+
+</div>
+<div class="cl"></div>
+<br/><br/>
+</div>
+</div>
+</div>
+<div class="cl"></div>
+
+
+

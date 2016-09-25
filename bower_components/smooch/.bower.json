@@ -1,0 +1,28 @@
+{
+  "name": "smooch",
+  "version": "3.4.0",
+  "authors": [
+    "Andrew Lavers <andrew@smooch.io>",
+    "Marc-Antoine Lemieux <marc@smooch.io>",
+    "Julian Garritano <julian@smooch.io>"
+  ],
+  "description": "Smooch Javascript SDK",
+  "main": "dist/smooch.js",
+  "keywords": [
+    "smooch",
+    "javascript",
+    "sdk"
+  ],
+  "license": "http://smooch.io/terms.html",
+  "homepage": "http://smooch.io",
+  "private": false,
+  "_release": "3.4.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "3.4.0",
+    "commit": "245c5bbdde45978c274dfa9a95f9dc656ff055a0"
+  },
+  "_source": "https://github.com/smooch/smooch-js.git",
+  "_target": "^3.4.0",
+  "_originalSource": "smooch"
+}

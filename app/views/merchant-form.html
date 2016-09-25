@@ -1,0 +1,64 @@
+<div class="container">
+<form name="submitform" style="padding:60px 20%;"class="form-horizontal" method="POST" ng-submit="vm.submitForm()" role="form">
+     <div class="form-group">
+        <label for="name" class="col-sm-3 control-label"><strong style="font-size:20px;"> YOUR DETAILS</strong></label>
+        
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">First Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" name="firstname" ng-model="vm.merchant.firstname" placeholder="First Name">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">Last Name</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="name" name="lastname" ng-model="vm.merchant.lastname" placeholder="Last Name"></div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="email" class="col-sm-3 control-label">Email</label>
+        <div class="col-sm-9">
+            <input type="email" class="form-control" id="email" name="email" ng-model="vm.merchant.email" placeholder="example@domain.com">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">Password</label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control" id="password" name="password" ng-model="vm.merchant.password" placeholder="Password">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="name" class="col-sm-3 control-label">Confirm Password</label>
+        <div class="col-sm-9">
+            <input type="password" class="form-control" id="password" name="confirmpassword" ng-model="vm.confirmpassword" placeholder="Confirm Password">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label style="font-size:18px;"for="phonenumber" class="col-sm-3 control-label">Phone Number</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="phonenumber" name="phonenumber" ng-model="vm.merchant.phone_number" placeholder="Phone Number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="college" class="col-sm-3 control-label">Organisation</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="organisation" name="organisation" ng-model="vm.merchant.organisation" placeholder="Organisation">
+        </div>
+    </div>
+    <div class="form-group">
+        <label style="font-size:18px;"for="city" class="col-sm-3 control-label">City</label>
+        <div class="col-sm-9">
+            <input type="text" class="form-control" id="city" name="city" ng-model="vm.merchant.city" placeholder="City">
+        </div>
+    </div>
+    <br>
+    <div class="form-group">
+        <div class="col-sm-4 col-sm-offset-3">
+<input style="width:100%; height:50px; font-size:18px"id="submit" name="submit" type="submit" value="Submit" class="btn btn-primary">        </div>
+    </div>
+</form>
+</div>

@@ -1,0 +1,62 @@
+<div class="panel panel-info" >
+    <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Join Partiko</h4>
+    <h5 class="text-center" style="color:#666666">We will never post anything without your permission</h5>
+    <div style="padding-top:30px" class="panel-body" >
+        <div class="text-center">
+            <div style="width:45%; height:50px; background-color:#344E86 !important"id="btn-fblogin"  class="btn btn-success">
+                <a ng-click="vm.facebookLogin()"><div style="padding-top: 10px;display: flex;align-items: center;
+    justify-content: center;"><img style="height:14px;"src="images/facebook-team.png"> &nbsp CONTINUE</div></a>
+            </div>
+        </div>
+        <br>
+        <div class="text-center">
+            <div style="width:45%; height:50px; background-color:#C43D2B !important"id="btn-glogin"  class="btn btn-success">
+                <a ng-click="vm.googleLogin()"><div style="padding-top: 10px;display: flex;align-items: center;
+    justify-content: center;"><img style="height:14px;"src="images/google-icon.png"> &nbsp CONTINUE</div></a>
+            </div>
+        </div> 
+        <br>
+        <div class="text-center">
+            <div style="width:45%; height:50px; background-color:#858C91 !important"id="btn-signup"  class="btn btn-success">
+                <a style=" cursor:pointer;" ng-click="closeThisDialog();vm.openSignIn()">
+                    <div style="padding-top:10px;">LOGIN WITH EMAIL</div>
+                </a>
+            </div>
+        </div> 
+        <br>
+        <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">              
+            <h5 class="text-center">Already with Partiko? <a ui-sref="signup" ng-click="closeThisDialog()" style="color:black;"><b>SIGN UP WITH EMAIL</b></a>
+            </h5>    
+        </div>
+    </div>                     
+</div>  
+
+
+ <!-- <div>
+	<br>
+	<br>
+	<div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+            <br>
+                <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Join Partiko</h4>
+                <h5 class="text-center" style="color:#666666">We will never post anything without your permission</h5>
+                <br>
+                <div style="padding-top:30px" class="panel-body" >
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#344E86 !important"id="btn-fblogin "  class="btn btn-success">    <a href="#"><div style="padding-top:10px;"><span class="fa fa-facebook"></span> &nbsp CONTINUE</div></a>    </div></div>
+                    <br>
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#C43D2B !important"id="btn-glogin"  class="btn btn-success">    <a href="#"><div style="padding-top:10px;"><span class="fa fa-google"></span> &nbsp CONTINUE</div></a>    </div></div> 
+                    <br>
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#858C91 !important"id="btn-signup"  class="btn btn-success">    <a href="#/signup"><div style="padding-top:10px;">SIGN UP WITH EMAIL</div></a>    </div></div> 
+                    <br>
+                    <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">              
+                        <h5 class="text-center">Already with Partiko? <a style="color:black"href="#/login2"><b>LOGIN WITH EMAIL</b></a></h5>    
+                    </div>
+                </div>                     
+            </div>  
+        </div> 
+    </div>
+</div>  -->

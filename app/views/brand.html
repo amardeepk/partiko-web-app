@@ -1,0 +1,39 @@
+<div>        
+    <div class="text-center"style="background: url('../images/brand.jpg'); background-size:cover; height:500px; padding-top:230px; color:white"><h1 style="font-size:70px;">Our Cool Marketeers</h1></div>
+    <div class="row" style="display:flex; padding:20px; justify-content:center;width:100%">
+        <div  style="width:340px; font-size:16px;height:50px; background-color:#EB5D44"id="btn-work"  class="btn btn-success row col-md-12">
+            <a ui-sref="manager-form"><div style="padding-top:10px;">Apply to become our Brand Manager></div></a>
+        </div>
+    </div>
+<div class="container">
+    <div class="row" >
+        <div ng-repeat="ambassador in vm.ambassadors"  class="col-lg-4 col-sm-6">
+            <div class="card hovercard" style="box-shadow:0 0 8px #000000; background-color:white;">
+                <div class="cardheader"></div>
+                <div class="avatar">
+                    <img alt="" ng-src="{{ambassador.profile_img_url}}">
+                </div>
+                <div class="info">
+                    <div class="title">
+                        <a style="color:#5C5C5C"target="_blank">{{ambassador.firstname}} {{ambassador.lastname}}</a>
+                    </div>
+                    <div class="desc">{{ambassador.college}}</div>
+                    <br>
+                </div>
+                <div class="bottom">
+                    <a ng-if="ambassador.facebook_url" style="border-radius: 50%; width:40px; height:40px; line-height:28px; background-color:#3B5998; border-color:#3B5998; opacity:0.8; font-size:20px;line-height:24px;"class="btn btn-primary btn-sm" rel="publisher" ng-href="{{ambassador.facebook_url}}">
+                         <img style="height:20px;"src="images/facebook-team.png">
+                    </a>
+                    <a ng-if="ambassador.twitter_url" style="border-radius: 50%; width:40px; height:40px; line-height:28px;font-size:20px;line-height:24px;"class="btn btn-primary btn-twitter btn-sm" ng-href="{{ambassador.twitter_url}}">
+                       <img style="height:20px;"src="images/twitter.png">
+                    </a>
+                    <a ng-if="ambassador.linkedin_url" style="border-radius: 50%; width:40px; height:40px; line-height:28px; background-color:#1B86BC; border-color:#1B86BC; opacity:0.8;font-size:20px;line-height:24px;"class="btn btn-danger btn-sm" rel="publisher" ng-href="{{ambassador.linkedin_url}}">
+                         <img style="height:20px;"src="images/linkedin-team.png">
+                    </a>                      
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+     

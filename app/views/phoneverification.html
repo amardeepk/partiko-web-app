@@ -1,0 +1,32 @@
+<div>
+	<br>
+	<br>
+    <div id="loginbox">                    
+        <div class="panel panel-info" >
+            <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Verify Phone Number</h4>
+            <h5 class="text-center" style="color:#666666">Please verify your mobile number <b>{{vm.phone_number}}</b> by entering the One-Time Password sent to your phone number.</h5><br>
+
+            <div style="padding-top:30px" class="panel-body">
+                <form name="verificationform" id="verificationform" ng-submit="vm.verifyOTP()" class="form-horizontal" role="form">
+                    <input style="height:50px;" type="text" ng-model="vm.otp" class="form-control"  placeholder="Otp for verification" required>                                       
+                    <!-- <div ng-messages="verificationform.otp.$error" role="alert" ng-if='signupForm.username.$dirty' multiple>
+                        <div ng-message="required">
+                            <span>Otp is required</span>
+                        </div>
+                        <div ng-message="pattern">
+                            <span>Invalid otp</span>
+                        </div>
+                    </div> -->
+                    <br>     
+                    <h5 class="text-center">Didn't received it yet? <a ng-disabled="vm.status" ng-click="vm.sendOTP()" style="color:black;cursor:pointer">RESEND OTP</a></h5>
+                    <h6 class="text-center">Please wait for atleast 1min before requesting a resend</h6>
+                    <br>
+                    
+                    <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">
+                        <button style="width:45%; type="submit" ng-disabled="vm.status" height:50px" id="btn-login" class="btn btn-success">Verify</button>
+                    </div>
+                </form>
+            </div>                     
+        </div>  
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{
+  "name": "yapp",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "json3": "^3.3.0",
+    "es5-shim": "^4.0.0",
+    "bootstrap": "^3.2.0",
+    "angular-mocks": "^1.5.0",
+    "ui-router": "~0.2.13",
+    "bootstrap-btn-outline-rounded": "~0.0.3",
+    "angular-animate": "^1.5.0",
+    "angular-translate": "^2.11.0",
+    "angular-translate-loader-url": "^2.11.0",
+    "ng-dialog": "^0.6.2",
+    "angular-bootstrap": "^1.3.3",
+    "angular-resource": "^1.5.7",
+    "angular-messages": "ng-messages#*",
+    "toastr": "^2.1.2",
+    "angular-facebook": "^0.2.3",
+    "angular-directive.g-signin": "^0.1.2",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.37",
+    "angular-mixpanel": "^1.1.2",
+    "angular-google-maps": "2.3.2",
+    "angular-spinner": "^0.8.1",
+    "ng-file-upload": "^12.0.4",
+    "ng-file-upload-shim": "^12.0.4",
+    "angular-google-plus": "^0.1.3",
+    "angular-sanitize": "^1.5.8",
+    "smooch": "^3.4.0"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.0"
+  },
+  "resolutions": {
+    "angular": "^1.5.0"
+  }
+}

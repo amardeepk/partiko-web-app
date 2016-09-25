@@ -1,0 +1,61 @@
+<div class="panel panel-info" >
+    <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Coming soon</h4>
+    <h5 class="text-center" style="color:#666666">We will notify you after it is launched..</h5>
+    <div style="padding-top:30px" class="panel-body" >
+        <div class="text-center">
+           
+                    <form id="loginform" ng-submit="submitEmail(email)" class="form-horizontal" role="form">
+                                
+                        <!-- <div class="col-sm-1" style="height:50px;margin-top: 20px;margin-bottom: 20px;margin-right: 35px;margin-left: 35px;" class="input-group"> -->
+                            <input style="height:50px;" id="login-username" type="email" ng-model="email" class="form-control" name="email" value="" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>                                        
+                                <!-- </div> -->
+                            <div ng-messages="loginform.email.$error" role="alert" multiple>
+                                <div ng-message="required">
+                                    <span>Email field is required</span>
+                                </div>
+                                <div ng-message="pattern">
+                                    <span>Email must be a valid e-mail address</span>
+                                </div>
+                            </div>
+                        <br> 
+                       
+                        <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">
+                            <button style="width:45%; height:50px" id="btn-login" class="btn btn-success"
+                            ng-disabled="loginform.$invalid || loginform.$pristine" >SUBMIT</button>
+                        </div>
+                    </form>
+        </div>
+        <br>
+       
+    </div>                     
+</div>  
+
+
+ <!-- <div>
+	<br>
+	<br>
+	<div class="container">    
+        <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">                    
+            <div class="panel panel-info" >
+            <br>
+                <h4 class="text-center" style="color:rgba(14, 12, 17, 0.84)">Join Partiko</h4>
+                <h5 class="text-center" style="color:#666666">We will never post anything without your permission</h5>
+                <br>
+                <div style="padding-top:30px" class="panel-body" >
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#344E86 !important"id="btn-fblogin "  class="btn btn-success">    <a href="#"><div style="padding-top:10px;"><span class="fa fa-facebook"></span> &nbsp CONTINUE</div></a>    </div></div>
+                    <br>
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#C43D2B !important"id="btn-glogin"  class="btn btn-success">    <a href="#"><div style="padding-top:10px;"><span class="fa fa-google"></span> &nbsp CONTINUE</div></a>    </div></div> 
+                    <br>
+                    <div class="text-center">
+                    <div style="width:45%; height:50px; background-color:#858C91 !important"id="btn-signup"  class="btn btn-success">    <a href="#/signup"><div style="padding-top:10px;">SIGN UP WITH EMAIL</div></a>    </div></div> 
+                    <br>
+                    <div class="col-sm-12 text-center controls" style="border-top: 1px solid#888; padding-top:15px;">              
+                        <h5 class="text-center">Already with Partiko? <a style="color:black"href="#/login2"><b>LOGIN WITH EMAIL</b></a></h5>    
+                    </div>
+                </div>                     
+            </div>  
+        </div> 
+    </div>
+</div>  -->

@@ -1,0 +1,290 @@
+<div class="dashboard-page">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- <div class="col-sm-3 col-md-2 sidebar">
+
+       <div class="text-center">
+        <h2 class="brand">Ani Theme <small>Free Edition</small></h2>
+        <img src="images/flat-avatar.png" class="user-avatar" /><br />
+        <a ui-sref="login" class="btn btn-white btn-outline btn-rounded btn-sm">Logout</a>
+      </div>
+
+      <ul class="nav nav-sidebar">
+        <li ng-class="{active: $state.includes('overview')}"><a ui-sref="overview">Overview <span class="sr-only">(current)</span></a></li>
+        <li ng-class="{active: $state.includes('reports')}"><a ui-sref="reports">Reports</a></li>
+        <li><a href="http://startreact.com/product/ani-theme/">Free React version</a></li>
+        <li><a href="http://www.strapui.com/ani-angularjs-theme">Angular Premium Edition</a></li>
+      </ul>
+
+    </div> -->
+
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+        
+           <a style="padding:0 0; position:absolute;z-index:100;"class="navbar-brand" ui-sref="dashboard">
+            <img id="small-logo"src="images/logo-new-small.png">
+          </a> 
+           <ul style="margin:0;"id="small-location"class="nav navbar-nav">
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="border-right: 1px solid #858C91;margin-left:50px;">&nbsp&nbsp<span class="glyphicon glyphicon-map-marker"></span><span>DELHI NCR</span><span class="caret"> </span></a>
+                      <ul style="text-align:center;"class="dropdown-menu">                 
+                          <li><a href="#">DELHI NCR</a></li>
+                          <li style="margin:6px;"role="separator" class="divider"></li> 
+                          <li><a >MUMBAI (soon)</a></li>  
+                          <li><a >BANGALORE (soon)</a></li>    
+                       
+                      </ul>
+                  </li>
+                 
+                  
+              </ul>
+          
+          <a style="padding:0 0;"class="navbar-brand" ui-sref="dashboard">
+            <img id="large-logo"src="images/logo-new.png">
+          </a>
+        </div>
+        <div id="small-nav" >
+           <div >
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  style="padding:0 20px; color:black;"class="glyphicon glyphicon-option-horizontal"></span></a>
+                    <ul style="font-size:17px;"class="dropdown-menu">
+                     <!--  <li ng-repeat="category in vm.main_categories" style="cursor:pointer;">                
+                      <a ui-sref='events({ category: "{{category.name.toLowerCase()}}" })'><span>{{category.name}}</span></a>
+                  </li> -->
+                        <li ng-repeat="category in vm.left_categories" style="cursor:pointer;">                                           
+                        <a ui-sref='events({ category: "{{category.name.toLowerCase()}}" })'><span>{{category.name | uppercase}}</span></a>
+                        </li>
+                    </ul>
+                  </div>
+         <div id="small-login"ng-if="authenticated==0" style="background-color:#ED5E44; height:50px; padding:0 8px;    width: 50px;
+    text-align: center;">
+                    <a style="font-size:30px;"class="loginBtn userlogin" ng-click="openDialogBox()"><img style="height:26px;"src="images/user-login-nav.png"></a>
+
+                  </div>
+                   <div id="small-user"ng-if="authenticated==1">
+                    <a class="dropdown-toggle customPad" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img ng-src="{{vm.user.profile_img_url}}" class="profileImage"><span class="caret"></span></a>
+                    <ul class="dropdown-menu" style="95%;">
+                        <li style="cursor:pointer;"><a ui-sref='profile'><img class="logos"src="images/avatar.png"><img class="logos-hover"src="images/avatar-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPROFILE</span></a></li>
+                        <li style="cursor:pointer;"><a ui-sref='mytickets'><img class="logos"src="images/ticket.png"><img class="logos-hover"src="images/ticket-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTICKETS</span></a></li>
+                         <li style="margin:6px;"role="separator" class="divider"></li>
+                        <li style="cursor:pointer;"><a ng-click="vm.logout()"><img class="logos"src="images/logout.png"><img class="logos-hover"src="images/logout-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLOGOUT</span></a></li>
+                    </ul>
+                  </div>
+                   <div id="small-event" style=" background-color:#00C0A0;height:50px; padding:0 8px;width: 50px;
+    text-align: center;"><a style="font-size:30px;background-color:#00C0A0;"class="loginBtn createevent" ui-sref="pricing"><img style="height:26px;"src="images/plus-icon-nav.png"></a></div>
+                </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul id="headerbar"style="width:55%; height:50px; overflow:hidden;"class="nav navbar-nav">
+                  <li class="dropdown" style="position:initial;">
+                      <a  class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="border-right: 1px solid #858C91; "><span class="glyphicon glyphicon-map-marker"></span><span> DELHI NCR </span><span class="caret"> </span></a>
+                      <ul style="text-align:center; min-width:140px; left:199px;" class="dropdown-menu">
+                       <li><a href="#">DELHI NCR</a></li>     
+                        <li style="margin:6px;"role="separator" class="divider"></li> 
+                          <li><a >MUMBAI (soon)</a></li>  
+                          <li><a >BANGALORE (soon)</a></li>    
+                      
+                         
+                      </ul>
+                  </li>
+                  <li><a ui-sref='events({ category:null })'><span>All</span></a></li>
+                  <li ng-repeat="category in vm.main_categories" style="cursor:pointer;">                
+                      <a ui-sref='events({ category: "{{category.name.toLowerCase()}}" })'><span>{{category.name}}</span></a>
+                  </li>
+                  
+              </ul>
+              <!-- <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form> -->
+              <ul class="nav navbar-nav navbar-right" style="position: fixed;right: 0;">
+                <li >
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span  style="padding:0 20px; "class="glyphicon glyphicon-option-horizontal"></span></a>
+                    <ul style="font-size:15px;"class="dropdown-menu">
+                        <li ng-repeat="category in vm.left_categories" style="cursor:pointer;">                                           
+                        <a ui-sref='events({ category: "{{category.name.toLowerCase()}}" })'><span>{{category.name | uppercase}}</span></a>
+                        </li>
+                    </ul>
+                  </li>
+                  <!-- <li><a ui-sref="dot"><span class="glyphicon glyphicon-option-horizontal"> </span></a></li> -->
+                 <li><a class="btn-default" ui-sref="search" id="search" ><span class="glyphicon glyphicon-search"></span></a></li>
+                  
+          
+                  <li ng-if="authenticated==0">
+                    <a style="font-size:15px;width:110px;"class="loginBtn userlogin" ng-click="openDialogBox()"><img style="height:18px;"src="images/user-login-nav.png"></span><span> &nbsp Login </span></a>
+
+                  </li>
+
+                  <li ng-if="authenticated==1">
+                    <a style="height:50px;"class="dropdown-toggle customPad" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <img ng-src="{{vm.user.profile_img_url}}" class="profileImage"><span class="caret"></span></a>
+                    <ul class="dropdown-menu"  style="top:100%;">
+                        <li style="cursor:pointer;"><a ui-sref='profile'><img class="logos"src="images/avatar.png"><img class="logos-hover"src="images/avatar-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPROFILE</span></a></li>
+                        <li style="cursor:pointer;"><a ui-sref='mytickets'><img class="logos"src="images/ticket.png"><img class="logos-hover"src="images/ticket-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTICKETS</span></a></li>
+                         <li style="margin:6px;"role="separator" class="divider"></li>
+                        <li style="cursor:pointer;"><a ng-click="vm.logout()"><img class="logos"src="images/logout.png"><img class="logos-hover"src="images/logout-hover.png"><span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspLOGOUT</span></a></li>
+                    </ul>
+                  </li>
+                  <li><a style="font-size:15px;width:180px; background-color:#1abc9c ; display:flex; align-items:center;" class="loginBtn createevent" target="__blank" href="https://partiko.com/organiser"><img style="height:15px; padding-right:5px;" src="images/plus-icon-nav.png"><span style="font-weight:300;"> &nbspCreate Event </span></a></li>
+                  
+              </ul>
+          </div><!-- /.navbar-collapse -->
+      </div><!-- /.container-fluid -->
+    </nav>
+   
+
+    <div ui-view>
+    </div>
+  </div>
+</div>
+    <div class='footer' style="z-index:2;">
+ <div class='container' style="padding-bottom:40px;">
+   <div class='row'>
+     <div class='col-sm-2 col-md-2 col-xs-6'>
+       <h4>USEFUL LINKS</h4>
+        <ul class='list-unstyled'>
+             
+             <li><a ui-sref="terms"><span>  Terms and Conditions </span></a></li>
+             <li><a ui-sref="faq"><span>  FAQ's </span> </a></li>
+             <li><a ui-sref="privacy"><span>  Privacy Policy </span></a></li>
+           </ul>
+     </div>
+
+     <div class='col-sm-2 col-xs-6 col-md-2'>
+       <h4>BUSINESS</h4>
+       <ul class="list-unstyled">
+             <li><a ui-sref="create-event"><span>  Become Partner </span></a></li>
+             <li><a href="https://portal.partiko.com"><span>  Partner Login </span></a></li>
+             <li><a ui-sref="pricing"><span> Pricing </span></a></li>
+           </ul>
+     </div>
+
+     <div class='clearfix visible-xs'></div>
+
+     <div class='col-sm-2 col-xs-6'>
+      <h4>MEET</h4>
+      <ul class='list-unstyled'>
+             <li><a ui-sref="team-members"><span>  Our Team </span></a></li>
+             <li><a ui-sref="brand"><span>  Brand Managers </span></a></li>
+             <li><a ui-sref="campus"><span>  Campus Ambassadors </span></a></li>
+             <li><a ui-sref="form"><span>  Join Us </span></a></li>
+      </ul>
+    </div>
+
+    <div class='col-sm-2 col-md-2 col-xs-6'>
+      <h4>MEDIA</h4>
+      <ul class='list-unstyled'>
+           <li><a href="#"><span>  Press Kits </span></a></li>
+             <li><a ui-sref="media"><span>  Media Coverage </span></a></li>
+<!--              <li><a ui-sref="event-partners"><span>  Event Partners </span></a></li>
+ -->                          <li><a href="http://blog.partiko.com"><span>  Blog </span></a></li>
+
+      </ul>
+   
+    </div>
+    <div class='col-sm-2 col-md-2 col-xs-6'>
+      <h4>CONNECT US</h4>
+      <ul class='list-unstyled'style="display:flex;">
+           <li style="padding:0 10px;"><a href="https://www.facebook.com/partikodelhi?_rdr=p"><img style="width:20px;height:20px;"src="images/facebook-footer.png"></a></li>
+          <li style="padding:0 10px;"><a href="https://twitter.com/Partiko1"><img style="width:20px;height:20px;"src="images/twitter-footer.png"></a></li>
+          <li style="padding:0 10px;"><a href="https://plus.google.com/+Partiko/posts"><img style="width:20px;height:20px;"src="images/googleplus-footer.png"></a></li>
+      
+      </ul>
+
+      <h4 style="padding-top:15px;">CALL US</h4>
+      <h5 style="color:#ED5E44;">+91 9599177503</h5>
+      <h5 style="color:#ED5E44;">hello@partiko.com</h5>
+   
+    </div>
+    <div class='col-sm-2 col-md-2 col-xs-6'>
+     
+     
+   
+    </div>
+<img src="images/Partiko-footer-logo-2.png">
+  </div>
+
+  
+
+  </div>
+  <div class="sec-footer">
+       <div style="display:flex; justify-content:center;align-items:center;">
+           <img style="height:40px;padding:0 20px;"src="images/panel.png"><br /><br />
+           <img style="padding:0 20px;" src="images/msg91.png">
+     </div>
+  </div>
+  <div style="text-align:center;background-color:#252525; height:60px;padding:20px;">
+  <div class="sec-content" style="display: inline; font-weight:normal;">
+        &copy; 2014-2016 Partiko Services Pvt. Ltd.
+      </div> 
+    </div>
+</div> 
+</div> 
+<!--
+   <footer id="footer" class="footer">
+     <div class="container">
+       <div class="row">
+         <br /><br /><br />
+         <div class="col-sm-3 col-md-3">
+           <h3 class="ftTittle">  Usefull Links</h3><br />
+           <ul class="ftLink">
+             <li><a href="about-us.html"><span>  Faq </span> </a></li>
+             <li><a href="campus-ambassadors.html"><span>  Terms Of Supply </span></a></li>
+             <li><a href="brand-managers.html"><span>  Privacy Policy </span></a></li>
+           </ul>
+         </div>
+         <div class="col-sm-3 col-md-3">
+           <h3 class="ftTittle" > Business</h3><br />
+           <ul class="ftLink">
+             <li><a href="#"><span>  List Events </span></a></li>
+             <li><a href="#"><span>  Become Partner </span></a></li>
+             <li><a href="#"><span>  Partner Login </span></a></li>
+           </ul>
+         </div>
+         <div class="col-sm-3 col-md-3">
+           <h3 class="ftTittle">  Meet</h3><br />
+           <ul class="ftLink">
+             <li><a href="#"><span>  About </span></a></li>
+             <li><a href="#"><span>  Brand Managers </span></a></li>
+             <li><a href="#"><span>  Campus Ambassadors </span></a></li>
+             <li><a href="#"><span>  Join Us </span></a></li>
+           </ul>
+         </div>
+         <div class="col-sm-3 col-md-3">
+           <h3 class="ftTittle" > Press & Media</h3><br />
+           <ul class="ftLink">
+             <li><a href="#"><span>  Press Kits </span></a></li>
+             <li><a href="#"><span>  Media Coverage </span></a></li>
+           </ul>
+         </div>
+         
+
+       </div><br />
+       <ul class="social-icons" style="padding-bottom:5px;margin-top:5px;text-align:center">
+          <li><a href="https://www.facebook.com/partikodelhi?_rdr=p"><img style="width:20px;height:20px;;"src="images/facebook.png"></a></li>
+          &nbsp;&nbsp;
+
+          <li><a href="https://twitter.com/Partiko1"><img style="width:20px;height:20px;;"src="images/twitter.png"></a></li>
+          &nbsp;&nbsp;
+          <li><a href="https://plus.google.com/+Partiko/posts"><img style="width:20px;height:20px;;"src="images/googleplus.png"></a></li>
+          &nbsp;&nbsp;
+
+      </ul>
+      <hr>
+       <!-- end .row -->
+
+   <!--  </div>
+     <br/>
+    .container     <div class="text-center">©2015 Partiko Services Pvt. Ltd., All Rights Reserved</div><br />
+         <div style="text-align:center">
+           <img src="images/panel.png"><br /><br />
+           <img src="images/msg91.png">
+     </div>
+
+     
+   </footer>-->
